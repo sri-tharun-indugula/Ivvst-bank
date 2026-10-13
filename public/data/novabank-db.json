@@ -1,0 +1,747 @@
+{
+  "user": {
+    "id": "CUST-982314",
+    "name": "Alex Morgan",
+    "email": "alex.morgan@novabank.in",
+    "phone": "+91 98765 43210",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80",
+    "kycStatus": "VERIFIED",
+    "currency": "INR",
+    "currencySymbol": "₹",
+    "occupation": "Senior Software Architect",
+    "address": "42, Palm Grove Enclave, Indiranagar, Bengaluru, KA 560038",
+    "dob": "1992-08-14",
+    "customerSince": "January 2023",
+    "preferences": {
+      "theme": "light",
+      "notifications": true,
+      "emailAlerts": true,
+      "smsAlerts": true,
+      "biometricEnabled": true,
+      "defaultAccount": "ACC-1001",
+      "language": "English (IN)",
+      "dateFormat": "DD/MM/YYYY"
+    }
+  },
+  "accounts": [
+    {
+      "id": "ACC-1001",
+      "accountNumber": "•••• 4821",
+      "fullAccountNumber": "012345674821",
+      "type": "Checking Account",
+      "category": "CHECKING",
+      "availableBalance": 85450.00,
+      "currentBalance": 89200.00,
+      "currency": "INR",
+      "ifscCode": "NOVA0001234",
+      "branch": "Bengaluru MG Road",
+      "isPrimary": true,
+      "status": "ACTIVE",
+      "openedDate": "15/01/2023",
+      "interestRate": 3.0,
+      "monthlyCashflow": {
+        "income": 85000.00,
+        "expense": 42350.00
+      }
+    },
+    {
+      "id": "ACC-1002",
+      "accountNumber": "•••• 9104",
+      "fullAccountNumber": "012345679104",
+      "type": "High-Yield Savings",
+      "category": "SAVINGS",
+      "availableBalance": 240000.00,
+      "currentBalance": 240000.00,
+      "currency": "INR",
+      "interestRate": 4.5,
+      "ifscCode": "NOVA0001234",
+      "branch": "Bengaluru MG Road",
+      "isPrimary": false,
+      "status": "ACTIVE",
+      "openedDate": "20/03/2023",
+      "monthlyCashflow": {
+        "income": 20000.00,
+        "expense": 5000.00
+      }
+    },
+    {
+      "id": "ACC-1003",
+      "accountNumber": "•••• 3319",
+      "fullAccountNumber": "012345673319",
+      "type": "Joint Household Account",
+      "category": "JOINT",
+      "availableBalance": 115000.00,
+      "currentBalance": 115000.00,
+      "currency": "INR",
+      "interestRate": 3.5,
+      "secondaryHolder": "Sarah Morgan",
+      "ifscCode": "NOVA0001234",
+      "branch": "Bengaluru MG Road",
+      "isPrimary": false,
+      "status": "ACTIVE",
+      "openedDate": "05/06/2024",
+      "monthlyCashflow": {
+        "income": 30000.00,
+        "expense": 24000.00
+      }
+    },
+    {
+      "id": "ACC-1004",
+      "accountNumber": "•••• 7702",
+      "fullAccountNumber": "012345677702",
+      "type": "Fixed Term Deposit",
+      "category": "FIXED_DEPOSIT",
+      "availableBalance": 500000.00,
+      "currentBalance": 500000.00,
+      "currency": "INR",
+      "interestRate": 7.25,
+      "maturityDate": "15/10/2027",
+      "maturityAmount": 618540.00,
+      "ifscCode": "NOVA0001234",
+      "branch": "Bengaluru MG Road",
+      "isPrimary": false,
+      "status": "ACTIVE",
+      "openedDate": "15/10/2024"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TXN-884210",
+      "accountId": "ACC-1001",
+      "date": "2026-10-12T10:30:00Z",
+      "displayDate": "12/10/2026",
+      "description": "Starbucks Coffee",
+      "merchant": "Starbucks Indiranagar",
+      "category": "Food & Dining",
+      "type": "CARD_PAYMENT",
+      "amount": 420.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20261012-01",
+      "source": "Platinum Infinite Credit Card (•••• 6523)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884209",
+      "accountId": "ACC-1001",
+      "date": "2026-10-10T14:15:00Z",
+      "displayDate": "10/10/2026",
+      "description": "Nature's Basket Organic Groceries",
+      "merchant": "Nature's Basket",
+      "category": "Food & Dining",
+      "type": "CARD_PAYMENT",
+      "amount": 3450.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20261010-09",
+      "source": "Checking Account (•••• 4821)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884208",
+      "accountId": "ACC-1001",
+      "date": "2026-10-08T09:00:00Z",
+      "displayDate": "08/10/2026",
+      "description": "Amazon India Electronics Purchase",
+      "merchant": "Amazon Seller Services",
+      "category": "Shopping",
+      "type": "CARD_PAYMENT",
+      "amount": 4999.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20261008-03",
+      "source": "Platinum Infinite Credit Card (•••• 6523)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884207",
+      "accountId": "ACC-1001",
+      "date": "2026-10-05T18:40:00Z",
+      "displayDate": "05/10/2026",
+      "description": "Uber Ride to Airport",
+      "merchant": "Uber India Technologies",
+      "category": "Transport",
+      "type": "CARD_PAYMENT",
+      "amount": 890.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20261005-18",
+      "source": "Checking Account (•••• 4821)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884206",
+      "accountId": "ACC-1001",
+      "date": "2026-10-01T08:00:00Z",
+      "displayDate": "01/10/2026",
+      "description": "Monthly Salary Credit - TechCorp",
+      "merchant": "TechCorp India Pvt Ltd",
+      "category": "Salary",
+      "type": "SALARY_CREDIT",
+      "amount": 85000.00,
+      "direction": "CREDIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20261001-01",
+      "source": "TechCorp Corporate Payroll",
+      "destination": "Checking Account (•••• 4821)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884205",
+      "accountId": "ACC-1001",
+      "date": "2026-09-30T16:00:00Z",
+      "displayDate": "30/09/2026",
+      "description": "Quarterly Savings Interest Credit",
+      "merchant": "NovaBank Internal",
+      "category": "Interest",
+      "type": "INTEREST_CREDIT",
+      "amount": 2680.00,
+      "direction": "CREDIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20260930-44",
+      "source": "NovaBank Treasury",
+      "destination": "High-Yield Savings (•••• 9104)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884204",
+      "accountId": "ACC-1001",
+      "date": "2026-09-28T11:20:00Z",
+      "displayDate": "28/09/2026",
+      "description": "Fund Transfer to Priya Sharma",
+      "merchant": "Priya Sharma (HDFC)",
+      "category": "Transfers",
+      "type": "BANK_TRANSFER",
+      "amount": 15000.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20260928-11",
+      "source": "Checking Account (•••• 4821)",
+      "destination": "HDFC Bank (•••• 4412)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884203",
+      "accountId": "ACC-1001",
+      "date": "2026-09-25T19:30:00Z",
+      "displayDate": "25/09/2026",
+      "description": "Electricity Bill Payment - BESCOM",
+      "merchant": "BESCOM Bengaluru",
+      "category": "Utilities",
+      "type": "BILL_PAYMENT",
+      "amount": 2840.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20260925-05",
+      "source": "Checking Account (•••• 4821)",
+      "destination": "BESCOM Utility Billing",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884202",
+      "accountId": "ACC-1001",
+      "date": "2026-09-22T15:10:00Z",
+      "displayDate": "22/09/2026",
+      "description": "Netflix Subscription Renewal",
+      "merchant": "Netflix India",
+      "category": "Entertainment",
+      "type": "CARD_PAYMENT",
+      "amount": 649.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20260922-81",
+      "source": "Virtual Shopping Card (•••• 2289)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884201",
+      "accountId": "ACC-1001",
+      "date": "2026-09-20T12:00:00Z",
+      "displayDate": "20/09/2026",
+      "description": "ATM Cash Withdrawal",
+      "merchant": "NovaBank ATM Indiranagar",
+      "category": "Cash",
+      "type": "CASH_WITHDRAWAL",
+      "amount": 5000.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20260920-02",
+      "source": "Classic Debit Card (•••• 7810)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884200",
+      "accountId": "ACC-1001",
+      "date": "2026-09-18T10:00:00Z",
+      "displayDate": "18/09/2026",
+      "description": "Personal Loan EMI Auto-Debit",
+      "merchant": "NovaBank Loans",
+      "category": "Loans",
+      "type": "LOAN_REPAYMENT",
+      "amount": 14250.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20260918-99",
+      "source": "Checking Account (•••• 4821)",
+      "destination": "Personal Loan (LOAN-301)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884199",
+      "accountId": "ACC-1001",
+      "date": "2026-09-15T14:45:00Z",
+      "displayDate": "15/09/2026",
+      "description": "Spotify Premium Annual",
+      "merchant": "Spotify AB",
+      "category": "Entertainment",
+      "type": "CARD_PAYMENT",
+      "amount": 1189.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20260915-12",
+      "source": "Virtual Shopping Card (•••• 2289)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884198",
+      "accountId": "ACC-1001",
+      "date": "2026-09-12T16:30:00Z",
+      "displayDate": "12/09/2026",
+      "description": "Cult.Fit Gym Membership",
+      "merchant": "CureFit Healthcare",
+      "category": "Healthcare",
+      "type": "CARD_PAYMENT",
+      "amount": 12500.00,
+      "direction": "DEBIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20260912-40",
+      "source": "Platinum Infinite Credit Card (•••• 6523)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884197",
+      "accountId": "ACC-1001",
+      "date": "2026-09-08T11:00:00Z",
+      "displayDate": "08/09/2026",
+      "description": "Refund from Myntra Fashion",
+      "merchant": "Myntra Designs",
+      "category": "Shopping",
+      "type": "REFUND",
+      "amount": 1899.00,
+      "direction": "CREDIT",
+      "status": "COMPLETED",
+      "referenceNo": "REF-NB-20260908-77",
+      "source": "Myntra Merchant Return",
+      "destination": "Platinum Infinite Credit Card (•••• 6523)",
+      "fee": 0.00
+    },
+    {
+      "id": "TXN-884196",
+      "accountId": "ACC-1001",
+      "date": "2026-09-02T13:20:00Z",
+      "displayDate": "02/09/2026",
+      "description": "Pending International SaaS Subscription",
+      "merchant": "Figma Inc.",
+      "category": "Software",
+      "type": "CARD_PAYMENT",
+      "amount": 1650.00,
+      "direction": "DEBIT",
+      "status": "PENDING",
+      "referenceNo": "REF-NB-20260902-88",
+      "source": "Platinum Infinite Credit Card (•••• 6523)",
+      "fee": 33.00
+    }
+  ],
+  "cards": [
+    {
+      "id": "CARD-401",
+      "accountId": "ACC-1001",
+      "type": "CREDIT",
+      "cardholderName": "ALEX MORGAN",
+      "maskedNumber": "•••• •••• •••• 6523",
+      "expiry": "08/29",
+      "variant": "Platinum Infinite Credit Card",
+      "brand": "VISA",
+      "status": "ACTIVE",
+      "creditLimit": 150000.00,
+      "availableCredit": 137550.00,
+      "outstandingAmount": 12450.00,
+      "minimumDue": 1250.00,
+      "dueDate": "05/11/2026",
+      "rewardPoints": 14250,
+      "controls": {
+        "online": true,
+        "international": false,
+        "contactless": true,
+        "atmWithdrawal": false,
+        "dailyLimit": 75000.00
+      }
+    },
+    {
+      "id": "CARD-402",
+      "accountId": "ACC-1001",
+      "type": "DEBIT",
+      "cardholderName": "ALEX MORGAN",
+      "maskedNumber": "•••• •••• •••• 7810",
+      "expiry": "11/28",
+      "variant": "Signature Debit Card",
+      "brand": "MASTERCARD",
+      "status": "ACTIVE",
+      "dailyAtmLimit": 50000.00,
+      "dailyPosLimit": 100000.00,
+      "controls": {
+        "online": true,
+        "international": false,
+        "contactless": true,
+        "atmWithdrawal": true,
+        "dailyLimit": 50000.00
+      }
+    },
+    {
+      "id": "CARD-403",
+      "accountId": "ACC-1001",
+      "type": "VIRTUAL",
+      "cardholderName": "ALEX MORGAN",
+      "maskedNumber": "•••• •••• •••• 2289",
+      "expiry": "03/27",
+      "variant": "Virtual SafePay Card",
+      "brand": "VISA",
+      "status": "ACTIVE",
+      "creditLimit": 25000.00,
+      "availableCredit": 22162.00,
+      "controls": {
+        "online": true,
+        "international": true,
+        "contactless": false,
+        "atmWithdrawal": false,
+        "dailyLimit": 20000.00
+      }
+    }
+  ],
+  "beneficiaries": [
+    {
+      "id": "BEN-101",
+      "name": "Priya Sharma",
+      "nickname": "Priya (Sister)",
+      "bankName": "HDFC Bank",
+      "accountNumber": "•••• 4412",
+      "fullAccountNumber": "50100438914412",
+      "ifscCode": "HDFC0001234",
+      "transferType": "IMPS / NEFT",
+      "status": "VERIFIED",
+      "lastTransferred": "28/09/2026",
+      "avatarColor": "#3b82f6"
+    },
+    {
+      "id": "BEN-102",
+      "name": "Rahul Verma",
+      "nickname": "Rahul (Work)",
+      "bankName": "ICICI Bank",
+      "accountNumber": "•••• 8821",
+      "fullAccountNumber": "000405008821",
+      "ifscCode": "ICIC0000456",
+      "transferType": "IMPS / NEFT",
+      "status": "VERIFIED",
+      "lastTransferred": "14/09/2026",
+      "avatarColor": "#10b981"
+    },
+    {
+      "id": "BEN-103",
+      "name": "Amit Patel",
+      "nickname": "Amit Landlord",
+      "bankName": "State Bank of India",
+      "accountNumber": "•••• 3021",
+      "fullAccountNumber": "203948573021",
+      "ifscCode": "SBIN0007890",
+      "transferType": "NEFT / RTGS",
+      "status": "VERIFIED",
+      "lastTransferred": "01/10/2026",
+      "avatarColor": "#f59e0b"
+    },
+    {
+      "id": "BEN-104",
+      "name": "Sneha Rao",
+      "nickname": "Sneha (NovaBank Intra)",
+      "bankName": "NovaBank",
+      "accountNumber": "•••• 1923",
+      "fullAccountNumber": "012345671923",
+      "ifscCode": "NOVA0001234",
+      "transferType": "INTRA_BANK",
+      "status": "VERIFIED",
+      "lastTransferred": "18/08/2026",
+      "avatarColor": "#8b5cf6"
+    }
+  ],
+  "bills": [
+    {
+      "id": "BILL-501",
+      "billerName": "BESCOM Bengaluru",
+      "category": "Electricity",
+      "accountNumber": "CA-88941029",
+      "amount": 2840.00,
+      "dueDate": "22/10/2026",
+      "status": "PENDING",
+      "autoPay": false,
+      "icon": "zap"
+    },
+    {
+      "id": "BILL-502",
+      "billerName": "Airtel Xstream Fiber",
+      "category": "Broadband",
+      "accountNumber": "08044991204",
+      "amount": 1179.00,
+      "dueDate": "25/10/2026",
+      "status": "PENDING",
+      "autoPay": true,
+      "icon": "wifi"
+    },
+    {
+      "id": "BILL-503",
+      "billerName": "BWSSB Water Board",
+      "category": "Water",
+      "accountNumber": "WTR-3392-BLR",
+      "amount": 650.00,
+      "dueDate": "28/10/2026",
+      "status": "PAID",
+      "autoPay": false,
+      "icon": "droplet"
+    },
+    {
+      "id": "BILL-504",
+      "billerName": "Tata Play DTH",
+      "category": "DTH / Cable",
+      "accountNumber": "1049281745",
+      "amount": 499.00,
+      "dueDate": "02/11/2026",
+      "status": "UPCOMING",
+      "autoPay": false,
+      "icon": "tv"
+    },
+    {
+      "id": "BILL-505",
+      "billerName": "Jio Postpaid Mobile",
+      "category": "Mobile Postpaid",
+      "accountNumber": "+91 98765 43210",
+      "amount": 825.00,
+      "dueDate": "04/11/2026",
+      "status": "UPCOMING",
+      "autoPay": true,
+      "icon": "smartphone"
+    }
+  ],
+  "loans": [
+    {
+      "id": "LOAN-301",
+      "type": "Personal Loan",
+      "status": "ACTIVE",
+      "principalAmount": 500000.00,
+      "outstandingAmount": 320000.00,
+      "interestRate": 10.5,
+      "tenureMonths": 36,
+      "remainingMonths": 24,
+      "emiAmount": 14250.00,
+      "nextDueDate": "01/11/2026",
+      "repaidPercentage": 36,
+      "repaymentSchedule": [
+        { "month": "Nov 2026", "emi": 14250, "principal": 11450, "interest": 2800 },
+        { "month": "Dec 2026", "emi": 14250, "principal": 11550, "interest": 2700 },
+        { "month": "Jan 2027", "emi": 14250, "principal": 11650, "interest": 2600 }
+      ]
+    }
+  ],
+  "loanProducts": [
+    {
+      "id": "PROD-HOME",
+      "name": "Nova Flexi Home Loan",
+      "interestRate": "8.40% p.a.",
+      "maxTenure": "30 Years",
+      "maxAmount": "₹5,00,00,000",
+      "features": ["Zero processing fee on balance transfer", "Flexible overdraft facility"]
+    },
+    {
+      "id": "PROD-VEHICLE",
+      "name": "Green Mobility Car Loan",
+      "interestRate": "8.75% p.a.",
+      "maxTenure": "7 Years",
+      "maxAmount": "₹50,00,000",
+      "features": ["Special 0.25% concession for EVs", "100% on-road financing"]
+    },
+    {
+      "id": "PROD-EDUCATION",
+      "name": "Global Scholar Education Loan",
+      "interestRate": "9.25% p.a.",
+      "maxTenure": "15 Years",
+      "maxAmount": "₹1,00,00,000",
+      "features": ["Moratorium period during studies", "Tax benefits under Sec 80E"]
+    }
+  ],
+  "savingsGoals": [
+    {
+      "id": "GOAL-201",
+      "title": "Emergency Fund",
+      "targetAmount": 300000.00,
+      "currentAmount": 210000.00,
+      "targetDate": "31/12/2026",
+      "monthlyContribution": 15000.00,
+      "category": "EMERGENCY",
+      "color": "#10b981"
+    },
+    {
+      "id": "GOAL-202",
+      "title": "New Electric SUV",
+      "targetAmount": 800000.00,
+      "currentAmount": 350000.00,
+      "targetDate": "30/06/2027",
+      "monthlyContribution": 25000.00,
+      "category": "VEHICLE",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "GOAL-203",
+      "title": "Tokyo Summer Vacation",
+      "targetAmount": 250000.00,
+      "currentAmount": 180000.00,
+      "targetDate": "30/04/2027",
+      "monthlyContribution": 15000.00,
+      "category": "TRAVEL",
+      "color": "#ec4899"
+    },
+    {
+      "id": "GOAL-204",
+      "title": "Apartment Down Payment",
+      "targetAmount": 1500000.00,
+      "currentAmount": 620000.00,
+      "targetDate": "31/12/2028",
+      "monthlyContribution": 35000.00,
+      "category": "REAL_ESTATE",
+      "color": "#8b5cf6"
+    }
+  ],
+  "budgets": [
+    { "category": "Housing & Rent", "budgeted": 25000.00, "spent": 25000.00, "color": "#3b82f6" },
+    { "category": "Food & Dining", "budgeted": 15000.00, "spent": 11240.00, "color": "#10b981" },
+    { "category": "Shopping", "budgeted": 10000.00, "spent": 8450.00, "color": "#f59e0b" },
+    { "category": "Utilities", "budgeted": 8000.00, "spent": 4669.00, "color": "#6366f1" },
+    { "category": "Transport", "budgeted": 6000.00, "spent": 3200.00, "color": "#ec4899" },
+    { "category": "Entertainment", "budgeted": 5000.00, "spent": 4100.00, "color": "#06b6d4" },
+    { "category": "Healthcare", "budgeted": 4000.00, "spent": 1200.00, "color": "#84cc16" }
+  ],
+  "statements": [
+    {
+      "id": "DOC-801",
+      "title": "Monthly Checking Statement - September 2026",
+      "type": "ACCOUNT_STATEMENT",
+      "account": "Checking Account (•••• 4821)",
+      "date": "30/09/2026",
+      "format": "PDF",
+      "size": "245 KB"
+    },
+    {
+      "id": "DOC-802",
+      "title": "Credit Card Statement - September 2026",
+      "type": "CARD_STATEMENT",
+      "account": "Platinum Infinite (•••• 6523)",
+      "date": "15/09/2026",
+      "format": "PDF",
+      "size": "188 KB"
+    },
+    {
+      "id": "DOC-803",
+      "title": "Annual Interest Certificate FY 2025-26",
+      "type": "TAX_CERTIFICATE",
+      "account": "All Linked Accounts",
+      "date": "05/04/2026",
+      "format": "PDF",
+      "size": "320 KB"
+    },
+    {
+      "id": "DOC-804",
+      "title": "TDS Certificate (Form 16A) Q1 2026",
+      "type": "TAX_CERTIFICATE",
+      "account": "High-Yield Savings (•••• 9104)",
+      "date": "15/07/2026",
+      "format": "PDF",
+      "size": "156 KB"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "NOTIF-901",
+      "title": "Salary Credited",
+      "message": "₹85,000.00 has been credited to your Checking Account (•••• 4821) by TechCorp India.",
+      "time": "10 mins ago",
+      "read": false,
+      "type": "TRANSACTION",
+      "icon": "arrow-down-left"
+    },
+    {
+      "id": "NOTIF-902",
+      "title": "Upcoming Bill Due",
+      "message": "BESCOM Electricity bill of ₹2,840.00 is due on 22/10/2026.",
+      "time": "2 hours ago",
+      "read": false,
+      "type": "BILL",
+      "icon": "alert-circle"
+    },
+    {
+      "id": "NOTIF-903",
+      "title": "Card Payment Alert",
+      "message": "Spent ₹420.00 at Starbucks Indiranagar with card ending in 6523.",
+      "time": "Yesterday",
+      "read": true,
+      "type": "CARD",
+      "icon": "credit-card"
+    },
+    {
+      "id": "NOTIF-904",
+      "title": "Security Check",
+      "message": "Successful login from Chrome on Windows 11 in Bengaluru.",
+      "time": "3 days ago",
+      "read": true,
+      "type": "SECURITY",
+      "icon": "shield-check"
+    }
+  ],
+  "supportTickets": [
+    {
+      "id": "TIK-1092",
+      "subject": "Inquiry regarding merchant refund processing timeline",
+      "category": "TRANSACTIONS",
+      "status": "IN_PROGRESS",
+      "createdDate": "11/10/2026",
+      "lastUpdate": "12/10/2026",
+      "messages": [
+        {
+          "sender": "Alex Morgan",
+          "time": "11/10/2026 14:20",
+          "text": "Hi team, I initiated a refund with Myntra on 08/10. It shows credited in app, just verifying if standard settlement is complete."
+        },
+        {
+          "sender": "NovaBank Support (Pooja)",
+          "time": "12/10/2026 09:15",
+          "text": "Hello Alex, thank you for reaching out. Yes, the refund has fully settled and your available credit limit is updated to ₹1,37,550.00."
+        }
+      ]
+    },
+    {
+      "id": "TIK-1045",
+      "subject": "Delivery tracking for contactless physical card upgrade",
+      "category": "CARDS",
+      "status": "RESOLVED",
+      "createdDate": "28/09/2026",
+      "lastUpdate": "30/09/2026",
+      "messages": [
+        {
+          "sender": "Alex Morgan",
+          "time": "28/09/2026 11:00",
+          "text": "Can you provide the courier tracking number for my replacement debit card?"
+        },
+        {
+          "sender": "NovaBank Support (Karan)",
+          "time": "29/09/2026 16:30",
+          "text": "Your card was dispatched via BlueDart (Tracking: BD893201948IN) and successfully delivered on 30/09."
+        }
+      ]
+    }
+  ]
+}
