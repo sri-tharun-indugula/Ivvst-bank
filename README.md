@@ -10,7 +10,7 @@
 
 **NovaBank** is a production-grade, highly responsive digital banking platform engineered as a frontend-first single page application. Powered by **Angular Standalone Components**, **Signals**, and an in-memory **JSON Mock REST Database**, NovaBank simulates full institutional banking workflows: multi-account management, instant funds transfers, live transaction auditing, card freeze controls, and smart financial budgeting.
 
-[Explore Architecture](docs/ARCHITECTURE.md) • [Module Deep Dive](docs/MODULES_GUIDE.md) • [Design System](docs/DESIGN_SYSTEM.md) • [Run Locally](#-quick-start)
+[Technical Docs Hub](#-technical-documentation-hub) • [Architecture Guide](docs/ARCHITECTURE.md) • [Modules Guide](docs/MODULES_GUIDE.md) • [Design System](docs/DESIGN_SYSTEM.md) • [Quick Start](#-quick-start--local-setup)
 
 ---
 
@@ -92,9 +92,91 @@ Fully optimized mobile experience with a thumb-friendly bottom navigation bar, q
 
 ---
 
+## 📚 Technical Documentation Hub
+
+For in-depth architectural design decisions, UI tokens, and user flow documentation, explore the three dedicated guides in the [`docs/`](docs/) directory:
+
+| Document | Primary Focus | Key Topics Covered | Link |
+| :--- | :--- | :--- | :--- |
+| **Architecture Deep Dive** | System design & reactive store | Standalone components, Angular Signals, optimistic UI, mock database engine, session continuity, Stitch MCP workflow | [Read Guide &rarr;](docs/ARCHITECTURE.md) |
+| **Module & Feature Guide** | Functional catalog & user flows | 14 banking modules, 3-step transfer stepper, security OTP verification, card freeze toggles, EMI loan calculator, CSV exports | [Read Guide &rarr;](docs/MODULES_GUIDE.md) |
+| **Design System & Tokens** | Visual language & accessibility | "Nova Precision" tokens, light/dark palettes, tabular figure typography, geometric radii, elevation scales, WCAG 2.1 AA/AAA | [Read Guide &rarr;](docs/DESIGN_SYSTEM.md) |
+
+---
+
+### 🏛️ 1. Architecture Deep Dive ([`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md))
+
+The [Architecture Deep Dive](docs/ARCHITECTURE.md) documents the engineering principles, directory layout, reactive state patterns, and simulated backend engine powering NovaBank:
+
+- **Frontend-First Single Page Architecture**: Engineered as a zero-dependency frontend application requiring no external database or server runtime. The entire backend REST layer is emulated through [`BankDataService`](src/app/core/services/bank-data.service.ts) and static JSON data.
+- **Angular 19/20 Standalone Paradigm**: 100% modular standalone components with zero `NgModule` boilerplate. Each route is lazily evaluated using Angular Router's `loadComponent()`, ensuring optimal chunk splitting and sub-second initial load times.
+- **Fine-Grained Reactivity with Angular Signals**:
+  - Replaces heavy state management libraries (NgRx, Akita) with native Angular `signal()`, `computed()`, and `effect()`.
+  - State changes (e.g. transfers, card freezing, bill payments) produce instantaneous, surgical DOM updates without full component subtree re-renders.
+  - Derived signals calculate real-time net worth (`totalAvailableBalance`), primary account resolution, and unread notification tallies on the fly.
+- **Optimistic State Mutation & Session Persistence**:
+  - All mutating actions (fund transfers, utility settlements, profile updates) immediately mutate the in-memory signal store while simulating realistic network latency for UI skeletons.
+  - State synchronizes directly with browser `sessionStorage`, ensuring testing workflows and demo mutations survive full page reloads.
+- **Google Stitch MCP Engine Integration**: Direct alignment with Google's Stitch Model Context Protocol (`mcp_config.json`) to automate UI layout tokenization, responsive breakpoints, and fintech aesthetic compliance.
+
+> 📖 **Read the full specification**: Check out [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for signal store code snippets, mutation sequences, and complete mock schema definitions.
+
+---
+
+### 🧩 2. Module & Feature Guide ([`docs/MODULES_GUIDE.md`](docs/MODULES_GUIDE.md))
+
+The [Module & Feature Guide](docs/MODULES_GUIDE.md) provides a comprehensive catalog of all 14 functional screens, business rules, and interactive user journeys implemented across the platform:
+
+| Domain | Module Route | Interactive Capabilities & Highlights |
+| :--- | :--- | :--- |
+| **Authentication** | `/auth/login` | Welcome portal, show/hide password toggle, remember device session, one-click demo login (`alex.morgan@novabank.in`). |
+| **Core Banking** | `/dashboard` | Total net-worth calculation, balance privacy mask (`••••••••`), cash inflow/outflow metrics, accounts carousel, quick action shortcuts, recent ledger feeds. |
+| **Core Banking** | `/accounts` | Checking, High-Yield Savings, Joint, and Fixed Term deposits. Detailed account inspector drawer showing unmasked numbers, branch IFSC, interest yields, and download actions. |
+| **Core Banking** | `/transactions` | Real-time text search, category filtering (Food, Shopping, Utilities, etc.), debit/credit filters, one-click CSV export, and modal digital receipts. |
+| **Money Movement** | `/transfers` | 3-Step fund transfer wizard (Account Selection $\rightarrow$ Beneficiary $\rightarrow$ Amount & Note $\rightarrow$ 4-digit OTP Verification $\rightarrow$ Branded Success Receipt) with real-time balance validation. |
+| **Money Movement** | `/payments` | Utility biller directory (Electricity, Water, Broadband, Mobile, DTH). One-click payment with instant optimistic status change to `PAID`. |
+| **Card Services** | `/cards` | Platinum Credit, Signature Debit, and Virtual SafePay cards. Metallic gradient visuals, instant Freeze/Unfreeze toggle, contactless/international switches, and daily spending cap slider. |
+| **Credit & Loans** | `/loans` | Active personal borrowings with amortization schedule breakdown, plus an interactive **Indicative EMI Calculator** with real-time principal, tenure, and rate sliders. |
+| **Wealth & Savings**| `/savings` | Goal tracking (Emergency Fund, Electric SUV, Tokyo Vacation) with visual progress percentage bars, monthly SIP contribution trackers, and custom goal creation. |
+| **Analytics** | `/budgeting` | Category spending budget meters, month-to-date cash flow health indicators, and real-time overspending alerts. |
+| **Directory** | `/beneficiaries`| Payee phonebook with custom avatars, external bank support (HDFC, ICICI, SBI, NovaBank), and verified recipient addition/deletion. |
+| **Documents** | `/statements` | Official downloadable monthly e-statements (PDF format), Annual Interest Certificates, and TDS Form 16A tax records. |
+| **Help & Support** | `/support` | 24x7 customer support ticketing center, interactive conversational message thread, emergency lost/stolen card reporting, and transaction disputes. |
+| **Identity & KYC** | `/settings` | Verified customer KYC profile, biometric & 2FA security preferences, notification channels, and global Light/Dark theme switcher. |
+
+> 📖 **Read the full specification**: Check out [docs/MODULES_GUIDE.md](docs/MODULES_GUIDE.md) for detailed step-by-step user flow walkthroughs and edge-case validation behaviors.
+
+---
+
+### 🎨 3. Design System & Tokens ([`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md))
+
+The [Design System Guide](docs/DESIGN_SYSTEM.md) documents the **Nova Precision** fintech design system, establishing a modern, trustworthy visual identity:
+
+- **Color Semantics & Dual-Theme Tokens**:
+  - **Brand Navy** (`#0D2137` / `#0F172A`): Institutional authority, logos, headers, primary shell surfaces.
+  - **Royal Blue** (`#2563EB` / `#3B82F6`): Interactive buttons, focus rings, active navigation items.
+  - **Mint Green** (`#10B981` / `#34D399`): Positive cash inflows, verified badges, savings achievements.
+  - **Amber Gold** (`#F59E0B` / `#FBBF24`): Credit limits, pending verification states, cautionary alerts.
+  - **Rose Red** (`#EF4444` / `#F87171`): Cash debits, destructive actions, emergency card freezes.
+- **Financial Typography & Tabular Figures**:
+  - Set in **Inter** (Google Fonts) with tight negative letter-spacing for headlines.
+  - Enforces `font-variant-numeric: tabular-nums` across all currency values, interest rates, and transaction ledgers to guarantee absolute vertical column alignment.
+- **Geometric Radii & Elevation Hierarchy**:
+  - Micro-radii (`6px` `--radius-sm`) for badges, moderate (`10px` `--radius-md`) for controls, large (`16px` `--radius-lg`) for cards/modals, and card surfaces (`24px` `--radius-xl`).
+  - Subtle multi-layered ambient shadows paired with crisp 1px borders (`#E2E8F0` / `#1E293B`) to convey physical polish without excessive blur.
+- **Accessibility & Compliance (WCAG 2.1 AA/AAA)**:
+  - Minimum contrast ratio of **7.5:1** across all textual elements.
+  - Color-independent state indicators (every status includes both text pills and direction signs `+`/`-`).
+  - High-visibility focus indicators (`3px` ring) for keyboard and screen-reader accessibility.
+  - Native `prefers-reduced-motion` integration for comfortable transitions.
+
+> 📖 **Read the full specification**: Check out [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) for the complete CSS variable dictionary and token mapping guide.
+
+---
+
 ## 🏗️ Technical Architecture
 
-NovaBank is built on a clean, scalable single-page architecture that completely decouples the frontend from backend servers while providing full reactive state and offline persistence.
+NovaBank is built on a clean, scalable single-page architecture that completely decouples the frontend from backend servers while providing full reactive state and offline persistence. For the complete architecture document, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ```mermaid
 flowchart TD
@@ -125,7 +207,7 @@ flowchart TD
 - **Signal-Based Reactivity**: Core data structures are managed through Angular Signals (`signal()`, `computed()`), providing instantaneous UI updates when funds are transferred or cards are frozen without unnecessary CD cycles.
 
 ### 2. Central JSON Mock Database (`novabank-db.json`)
-All backend entities are stored in [`public/data/novabank-db.json`](file:///c:/Users/sindu/OneDrive/Desktop/practice/Ivvst%20bank/public/data/novabank-db.json). On startup, [`BankDataService`](file:///c:/Users/sindu/OneDrive/Desktop/practice/Ivvst%20bank/src/app/core/services/bank-data.service.ts) queries the endpoint and synchronizes state with `sessionStorage` so your transfers and actions persist across page refreshes during prototype demonstrations.
+All backend entities are stored in [`public/data/novabank-db.json`](public/data/novabank-db.json). On startup, [`BankDataService`](src/app/core/services/bank-data.service.ts) queries the endpoint and synchronizes state with `sessionStorage` so your transfers and actions persist across page refreshes during prototype demonstrations.
 
 ### 3. Google Stitch MCP Engine Integration
 All screen layouts and design tokens follow the **Nova Precision** design system generated and managed via the Stitch Model Context Protocol (`mcp_config.json`), ensuring consistent 8px/16px/24px roundedness, WCAG AA/AAA color contrast, and fintech aesthetics.
@@ -133,6 +215,8 @@ All screen layouts and design tokens follow the **Nova Precision** design system
 ---
 
 ## 🎨 Design System & Branding
+
+NovaBank implements the **Nova Precision** fintech design system. For the complete token reference and specifications, see [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md).
 
 - **Brand Name**: NovaBank
 - **Tagline**: Banking made simpler.
